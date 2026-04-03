@@ -2,6 +2,9 @@ import ButtonComponentCard from "../components/component-cards/ButtonComponentCa
 import ModalComponentCard from "../components/component-cards/ModalComponentCard.jsx";
 import DrawerComponentCard from "../components/component-cards/DrawerComponentCard.jsx";
 import SpinnerComponentCard from "../components/component-cards/SpinnerComponentCard.jsx";
+import NotificationComponentCard from "../components/component-cards/NotificationComponentCard.jsx";
+import TabsComponentCard from "../components/component-cards/TabsComponentCard.jsx";
+import EmptyComponentCard from "../components/component-cards/EmptyComponentCard.jsx";
 
 const Components = () => {
     return (
@@ -18,6 +21,16 @@ const Components = () => {
 
             {/* Spinner */}
             <SpinnerComponentCard />
+
+            {/* Notification */}
+            <NotificationComponentCard />
+
+            {/* Tabs */}
+            <TabsComponentCard />
+
+            {/* Empty State */}
+
+            <EmptyComponentCard />
         </div>
     )
 }
