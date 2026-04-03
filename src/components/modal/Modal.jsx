@@ -1,21 +1,31 @@
-import { useState } from "react";
-import Button from "../button/Button.jsx";
-import {FaXmark} from "react-icons/fa6";
+import {createContext, useContext, useState} from "react";
 
-const Modal = ({ children, title }) => {
+const ModalContext = createContext(null);
+
+const Modal = ({ children }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    function triggerModal() {
+        setIsModalOpen(true);
+    }
+
+    function closeModal() {
+        setIsModalOpen(false);
+    }
+
     return (
-        <div className="fixed top-0 size-full bg-gray-500/40 flex items-center justify-center backdrop-blur-xs">
-            <div className="relative min-w-110 px-5 py-3 overflow-y-auto bg-white rounded-lg ring ring-gray-400 shadow-sm shadow-gray-300">
-                <div>
-                    <h3 className="text-2xl font-semibold">{title}</h3>
-                    {/*<ModalClose>*/}
-                    {/*    <FaXmark />*/}
-                    {/*</ModalClose>*/}
-                </div>
-                {children}
-            </div>
-        </div>
+        <ModalContext.Provider value={{ isModalOpen, triggerModal, closeModal }}>
+            {children}
+        </ModalContext.Provider>
     );
+}
+
+export const useModal = () => {
+    const context = useContext(ModalContext);
+
+    if (!context) throw new Error("useModal must be used within Modal");
+
+    return context;
 }
 
 export default Modal;

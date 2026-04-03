@@ -1,9 +1,9 @@
 import { cx } from "../../utils/index.js";
 
 const buttonConfig = {
-    default: "bg-zinc-900 text-white font-semibold px-4 py-1.5 rounded-lg cursor-pointer active:translate-y-0.5 transition-all duration-100 flex items-center justify-center gap-2 disabled:bg-zinc-900/40 disabled:cursor-default disabled:translate-none",
+    default: "bg-zinc-900 text-white font-semibold px-4 py-1.5 rounded-lg cursor-pointer active:translate-y-px transition-all duration-100 flex items-center justify-center gap-2 disabled:bg-zinc-900/40 disabled:cursor-default disabled:translate-none",
     variants: {
-        outline: "bg-white hover:bg-zinc-100 ring ring-zinc-200 text-zinc-900 disabled:bg-zinc-100/80 text-zinc-400",
+        outline: "bg-white hover:bg-zinc-100 ring ring-zinc-200 text-zinc-900 disabled:bg-zinc-100/80",
         secondary: "text-zinc-900 bg-zinc-100 hover:bg-zinc-100/70 disabled:text-zinc-400 bg-zinc-100!",
         ghost: "text-zinc-900 bg-transparent hover:bg-zinc-100 disabled:text-zinc-400 disabled:bg-transparent!",
         danger: "text-red-500 bg-red-100 hover:bg-red-200 disabled:text-red-300 disabled:bg-red-100",
@@ -15,6 +15,7 @@ const buttonConfig = {
         lg: "text-xl",
 
         ["icon-xs"]: "p-1.5 text-xs rounded-md",
+        ["icon-sm"]: "p-2",
         icon: "p-1.5 min-w-[36px] min-h-[36px]",
         ["icon-lg"]: "text-base p-3"
     }
