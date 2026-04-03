@@ -5,7 +5,7 @@ const DrawerClose = ({ children, variant, size }) => {
     const { closeDrawer } = useDrawer();
 
     return (
-        <Button onClick={closeDrawer} variant={variant} size={size}>
+        <Button type="button" onClick={closeDrawer} variant={variant} size={size}>
             {children}
         </Button>
     );
