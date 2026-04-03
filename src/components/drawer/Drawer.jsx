@@ -3,7 +3,7 @@ import {createContext, useContext, useState} from "react";
 const DrawerContext = createContext(null);
 
 const Drawer = ({ children }) => {
-    const [isDrawerOpen, setIsDrawerOpen] = useState(true);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     function triggerDrawer() {
         setIsDrawerOpen(true);

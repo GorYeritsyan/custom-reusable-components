@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import {twMerge} from "tailwind-merge";
 
-export const cx = (...classNames) => {
+export const cn = (...classNames) => {
     return twMerge(clsx(...classNames));
 }

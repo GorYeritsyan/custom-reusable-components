@@ -1,4 +1,4 @@
-import { cx } from "../../utils/index.js";
+import { cn } from "../../utils/index.js";
 
 const buttonConfig = {
     default: "bg-zinc-900 text-white font-semibold px-4 py-1.5 rounded-lg cursor-pointer active:translate-y-px transition-all duration-100 flex items-center justify-center gap-2 disabled:bg-zinc-900/40 disabled:cursor-default disabled:translate-none",
@@ -25,7 +25,7 @@ const Button = ({ children, variant, size, disabled, classNames, ...props }) => 
     return (
         <button
             disabled={disabled}
-            className={cx(
+            className={cn(
                 buttonConfig.default,
                 buttonConfig?.variants?.[variant],
                 buttonConfig?.sizes?.[size],
