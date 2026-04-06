@@ -1,7 +1,7 @@
 import { cn } from "../../utils/index.js";
 
 const buttonConfig = {
-    default: "bg-zinc-900 text-white font-semibold px-4 py-1.5 rounded-lg cursor-pointer active:translate-y-px transition-all duration-100 flex items-center justify-center gap-2 disabled:bg-zinc-900/40 disabled:cursor-default disabled:translate-none",
+    default: "bg-zinc-900 text-white font-semibold px-4 py-1.5 rounded-lg cursor-pointer active:translate-y-px transition-all duration-100 flex items-center justify-center gap-2 disabled:bg-zinc-900/40 disabled:cursor-default disabled:translate-none outline-none",
     variants: {
         outline: "bg-white hover:bg-zinc-100 ring ring-zinc-200 text-zinc-900 disabled:text-zinc-400 disabled:bg-zinc-100/80",
         secondary: "text-zinc-900 bg-zinc-200 hover:bg-zinc-200/70 disabled:text-zinc-400 disabled:bg-zinc-100",

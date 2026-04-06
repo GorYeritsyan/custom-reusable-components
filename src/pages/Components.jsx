@@ -26,7 +26,7 @@ const Components = () => {
             {/* Spinner */}
             <SpinnerComponentCard />
 
-            {/* Notification */}
+            {/* NotificationProvider */}
             <NotificationComponentCard />
 
             {/* Tabs */}

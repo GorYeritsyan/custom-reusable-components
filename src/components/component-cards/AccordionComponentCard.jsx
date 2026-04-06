@@ -4,7 +4,7 @@ import Accordion from "../accordion/Accordion.jsx";
 const data = [
     {
         value: "notifications",
-        title: "Notification Settings",
+        title: "NotificationProvider Settings",
         description:
             "Manage how you receive notifications. You can enable email alerts for updates or push notifications for mobile devices.",
     },
