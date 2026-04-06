@@ -8,6 +8,7 @@ import EmptyComponentCard from "../components/component-cards/EmptyComponentCard
 import AccordionComponentCard from "../components/component-cards/AccordionComponentCard.jsx";
 import FormComponentCard from "../components/component-cards/FormComponentCard.jsx";
 import TableComponentCard from "../components/component-cards/TableComponentCard.jsx";
+import PaginationComponentCard from "../components/component-cards/PaginationComponentCard.jsx";
 
 const Components = () => {
     return (
@@ -41,6 +42,8 @@ const Components = () => {
             <FormComponentCard />
 
             <TableComponentCard />
+
+            <PaginationComponentCard />
         </div>
     )
 }
