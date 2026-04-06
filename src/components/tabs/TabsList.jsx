@@ -14,9 +14,15 @@ const tabsVariants = {
 const TabsList = ({ tabs, variant, activeTab, orientation, onTabChange }) => {
 
     return (
-        <div className={cn(tabsVariants.default, tabsVariants.variants?.[variant], tabsVariants.orientation[orientation])}>
+        <div className={cn(tabsVariants.default, tabsVariants.variants?.[variant], tabsVariants.orientation?.[orientation])}>
             {tabs.map(tab => (
-                <TabsTrigger orientation={orientation} variant={variant} activeTab={activeTab} onTabChange={() => onTabChange(tab.value)} key={tab.value} value={tab.value}>
+                <TabsTrigger
+                    key={tab.value}
+                    value={tab.value}
+                    activeTab={activeTab}
+                    variant={variant}
+                    onTabChange={() => onTabChange(tab.value)}
+                >
                     {tab.label}
                 </TabsTrigger>
             ))}

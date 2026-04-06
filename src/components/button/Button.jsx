@@ -21,7 +21,7 @@ const buttonConfig = {
     }
 }
 
-const Button = ({ children, variant, size, disabled, classNames, ...props }) => {
+const Button = ({ children, variant, size, disabled, className, ...props }) => {
     return (
         <button
             disabled={disabled}
@@ -29,7 +29,7 @@ const Button = ({ children, variant, size, disabled, classNames, ...props }) => 
                 buttonConfig.default,
                 buttonConfig?.variants?.[variant],
                 buttonConfig?.sizes?.[size],
-                classNames,
+                className,
                 )}
 
             {...props}

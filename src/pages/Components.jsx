@@ -5,6 +5,9 @@ import SpinnerComponentCard from "../components/component-cards/SpinnerComponent
 import NotificationComponentCard from "../components/component-cards/NotificationComponentCard.jsx";
 import TabsComponentCard from "../components/component-cards/TabsComponentCard.jsx";
 import EmptyComponentCard from "../components/component-cards/EmptyComponentCard.jsx";
+import AccordionComponentCard from "../components/component-cards/AccordionComponentCard.jsx";
+import FormComponentCard from "../components/component-cards/FormComponentCard.jsx";
+import TableComponentCard from "../components/component-cards/TableComponentCard.jsx";
 
 const Components = () => {
     return (
@@ -31,6 +34,13 @@ const Components = () => {
             {/* Empty State */}
 
             <EmptyComponentCard />
+
+            {/* Accordion - Collapsible Panel */}
+            <AccordionComponentCard />
+
+            <FormComponentCard />
+
+            <TableComponentCard />
         </div>
     )
 }
