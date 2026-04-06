@@ -9,6 +9,7 @@ import AccordionComponentCard from "../components/component-cards/AccordionCompo
 import FormComponentCard from "../components/component-cards/FormComponentCard.jsx";
 import TableComponentCard from "../components/component-cards/TableComponentCard.jsx";
 import PaginationComponentCard from "../components/component-cards/PaginationComponentCard.jsx";
+import DropdownComponentCard from "../components/component-cards/DropdownComponentCard.jsx";
 
 const Components = () => {
     return (
@@ -43,7 +44,10 @@ const Components = () => {
 
             <TableComponentCard />
 
+            <DropdownComponentCard />
+
             <PaginationComponentCard />
+
         </div>
     )
 }

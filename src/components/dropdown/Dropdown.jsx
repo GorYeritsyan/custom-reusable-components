@@ -1,16 +1,10 @@
 import DropdownItem from "./DropdownItem.jsx";
+import {useState} from "react";
 
-const Dropdown = ({ children, menu }) => {
+const Dropdown = ({ children, menu, trigger }) => {
     return (
         <div className="relative group">
             {children}
-            <div className="absolute top-full left-0 border border-gray-300 min-w-75 bg-white rounded-md p-2 hidden group-hover:block">
-                {menu.map((item, index) => (
-                    <DropdownItem key={index} disabled={item.disabled} danger={item.danger} icon={item?.icon}>
-                        {item.label}
-                    </DropdownItem>
-                ))}
-            </div>
         </div>
     );
 }
