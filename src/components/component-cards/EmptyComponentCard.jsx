@@ -1,9 +1,8 @@
+import { FaRegBell } from "react-icons/fa";
+import { BiRefresh } from "react-icons/bi";
 import ComponentCard from "../ComponentCard.jsx";
 import Empty from "../empty/Empty.jsx";
-import {FaRegBell} from "react-icons/fa";
-import EmptyMedia from "../empty/EmptyMedia.jsx";
 import Button from "../button/Button.jsx";
-import {BiRefresh} from "react-icons/bi";
 
 const EmptyComponentCard = () => {
     return (

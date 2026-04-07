@@ -26,7 +26,7 @@ const NotificationProvider = ({ children }) => {
                 break;
         }
 
-        setNotifications(prev => [{ id: notificationId, title, description, icon }, ...prev]);
+        setNotifications(prev => [{ id: notificationId, title, description, icon, position }, ...prev]);
         setPosition(position);
     }
 

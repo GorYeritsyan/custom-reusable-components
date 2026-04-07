@@ -1,7 +1,7 @@
-import {useNotification} from "./NotificationProvider.jsx";
+import { createPortal } from "react-dom";
+import { useNotification } from "./NotificationProvider.jsx";
 import Notification from "./Notification.jsx";
-import {cn} from "../utils/index.js";
-import {createPortal} from "react-dom";
+import { cn } from "../utils/index.js";
 
 const notificationConfig = {
     positions: {
@@ -18,15 +18,30 @@ const notificationConfig = {
 const Notifications = () => {
     const { notifications, position = "top-left" } = useNotification();
 
+    // Group Notifications by position
+    const groupedNotifications = notifications.reduce((acc, notification) => {
+        // If there is no notifications for selected position then create array to add notifications
+        if (!acc[notification.position]) acc[notification.position] = [];
+
+        // Add notifications for selected position
+        acc[notification.position].push(notification);
+
+        return acc;
+    }, {});
+
+    console.log(groupedNotifications);
+
     if (notifications.length === 0) return;
 
     return (
         createPortal((
-            <div className={cn("fixed z-1 flex flex-col gap-2", notificationConfig?.positions?.[position])}>
-                {notifications.map(notification => (
-                    <Notification key={notification.id} notification={notification} />
-                ))}
-            </div>
+            Object.entries(groupedNotifications).map(([position, notifications]) => (
+                <div className={cn("fixed z-1 flex flex-col gap-2", notificationConfig?.positions?.[position])}>
+                    {notifications.map(notification => (
+                        <Notification key={notification.id} notification={notification} />
+                    ))}
+                </div>
+            ))
         ), document.body)
     );
 }

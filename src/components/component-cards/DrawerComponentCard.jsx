@@ -2,7 +2,6 @@ import ComponentCard from "../ComponentCard.jsx";
 import Drawer from "../drawer/Drawer.jsx";
 import DrawerTrigger from "../drawer/DrawerTrigger.jsx";
 import DrawerContent from "../drawer/DrawerContent.jsx";
-import Button from "../button/Button.jsx";
 import DrawerConfirm from "../drawer/DrawerConfirm.jsx";
 import DrawerClose from "../drawer/DrawerClose.jsx";
 import DrawerFooter from "../drawer/DrawerFooter.jsx";
