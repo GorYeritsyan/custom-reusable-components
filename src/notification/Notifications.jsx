@@ -29,14 +29,12 @@ const Notifications = () => {
         return acc;
     }, {});
 
-    console.log(groupedNotifications);
-
     if (notifications.length === 0) return;
 
     return (
         createPortal((
-            Object.entries(groupedNotifications).map(([position, notifications]) => (
-                <div className={cn("fixed z-1 flex flex-col gap-2", notificationConfig?.positions?.[position])}>
+            Object.entries(groupedNotifications).map(([position, notifications], index) => (
+                <div key={index} className={cn("fixed z-1 flex flex-col gap-2", notificationConfig?.positions?.[position])}>
                     {notifications.map(notification => (
                         <Notification key={notification.id} notification={notification} />
                     ))}
