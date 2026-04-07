@@ -1,5 +1,4 @@
 import Button from "../components/button/Button.jsx";
-import {cn} from "../utils/index.js";
 
 
 const PaginationButton = ({ currentPage, page, onChangePage }) => {

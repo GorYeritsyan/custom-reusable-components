@@ -1,36 +1,7 @@
-// import {createContext, useContext, useState} from "react";
-//
-// const TabsContext = createContext(null);
-//
-// const Tabs = ({ children, defaultTab, tabs }) => {
-//     const [activeTab, setActiveTab] = useState(defaultTab ?? "overview");
-//
-//     return (
-//         <TabsContext.Provider value={{ activeTab, setActiveTab, tabs }}>
-//             <div className="flex flex-col gap-2">
-//                 {children}
-//             </div>
-//         </TabsContext.Provider>
-//     );
-// }
-//
-// export const useTabs = () => {
-//     const context = useContext(TabsContext);
-//
-//     if (!context) throw new Error('useTabs must be used within Tabs');
-//
-//     return context;
-// }
-//
-// export default Tabs;
-
-import {createContext, useContext, useState} from "react";
-import TabsTrigger from "./TabsTrigger.jsx";
+import { useState } from "react";
 import TabsList from "./TabsList.jsx";
 import TabsContent from "./TabsContent.jsx";
-import {cn} from "../../utils/index.js";
-
-const TabsContext = createContext(null);
+import { cn } from "../../utils/index.js";
 
 const tabsOrientation = {
     horizontal: "flex flex-col gap-2",
@@ -61,14 +32,6 @@ const Tabs = ({ defaultTab, tabs, variant, orientation = "horizontal" }) => {
             ))}
         </div>
     );
-}
-
-export const useTabs = () => {
-    const context = useContext(TabsContext);
-
-    if (!context) throw new Error('useTabs must be used within Tabs');
-
-    return context;
 }
 
 export default Tabs;

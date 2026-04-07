@@ -20,7 +20,7 @@ const data = [
         description:
             "View your current plan, payment history, and upcoming invoices. Update your payment method, change your subscription tier, or cancel your subscription.",
     },
-]
+];
 
 const AccordionComponentCard = () => {
     return (

@@ -1,6 +1,6 @@
 import Button from "../button/Button.jsx";
 
-const Table = ({ columns, data, actions, openEditUserModal, openDeleteUserModal }) => {
+const Table = ({ columns, data, actions }) => {
     return (
         <table className="table-fixed rounded-lg w-full outline outline-gray-300 shadow-sm shadow-gray-300">
             <thead>

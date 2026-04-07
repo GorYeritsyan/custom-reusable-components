@@ -1,7 +1,7 @@
-import {useDrawer} from "./Drawer.jsx";
-import {FaXmark} from "react-icons/fa6";
+import { createPortal } from "react-dom";
+import { FaXmark } from "react-icons/fa6";
+import { useDrawer } from "./Drawer.jsx";
 import DrawerClose from "./DrawerClose.jsx";
-import {createPortal} from "react-dom";
 
 const drawerDirections = {
     top: "",

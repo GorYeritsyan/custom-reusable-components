@@ -8,6 +8,7 @@ import {BiRefresh} from "react-icons/bi";
 const EmptyComponentCard = () => {
     return (
         <ComponentCard title="Empty State">
+            {/* Custom Empty State */}
             <Empty
                 icon={<FaRegBell />}
                 title="No Notifications"
@@ -18,6 +19,9 @@ const EmptyComponentCard = () => {
                     Refresh
                 </Button>
             </Empty>
+
+            {/* Default Empty State */}
+            {/*<Empty />*/}
         </ComponentCard>
     );
 }

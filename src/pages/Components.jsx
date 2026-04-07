@@ -14,40 +14,41 @@ import DropdownComponentCard from "../components/component-cards/DropdownCompone
 const Components = () => {
     return (
         <div className="flex flex-col gap-10 items-center py-10">
+            {/* Button */}
             <ButtonComponentCard />
 
-            {/*<DropdownComponentCard />*/}
-
-            {/* Modal */}
-            <ModalComponentCard />
-
-            {/* Drawer */}
-            <DrawerComponentCard />
-
-            {/* Spinner */}
-            <SpinnerComponentCard />
-
-            {/* NotificationProvider */}
-            <NotificationComponentCard />
-
-            {/* Tabs */}
-            <TabsComponentCard />
+            {/* Dropdown Component */}
+            <DropdownComponentCard />
 
             {/* Empty State */}
-
             <EmptyComponentCard />
 
             {/* Accordion - Collapsible Panel */}
             <AccordionComponentCard />
 
+            {/* Tabs */}
+            <TabsComponentCard />
+
+            {/* NotificationProvider */}
+            <NotificationComponentCard />
+
+            {/* Spinner */}
+            <SpinnerComponentCard />
+
+            {/* Drawer */}
+            <DrawerComponentCard />
+
+            {/* Modal */}
+            <ModalComponentCard />
+
+            {/* Form */}
             <FormComponentCard />
 
+            {/* Table */}
             <TableComponentCard />
 
-            <DropdownComponentCard />
-
+            {/* Pagination */}
             <PaginationComponentCard />
-
         </div>
     )
 }

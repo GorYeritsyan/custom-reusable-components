@@ -6,10 +6,10 @@ import NotificationProvider from "./notification/NotificationProvider.jsx";
 import Notifications from "./notification/Notifications.jsx";
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-      <NotificationProvider>
-          <Notifications />
-          <App />
-      </NotificationProvider>
-  </StrictMode>,
+    <StrictMode>
+        <NotificationProvider>
+            <Notifications />
+            <App />
+        </NotificationProvider>
+    </StrictMode>,
 )

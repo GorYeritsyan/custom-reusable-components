@@ -49,7 +49,7 @@ const tableActions = [
             console.log("delete", id);
         }
     }
-]
+];
 
 const TableComponentCard = () => {
     return (

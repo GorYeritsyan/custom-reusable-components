@@ -13,10 +13,9 @@ const buttonConfig = {
         xs: "text-xs px-2 py-1 rounded-md",
         sm: "text-sm px-3 py-1 ",
         lg: "text-xl",
-
         ["icon-xs"]: "p-1.5 text-xs rounded-md",
         ["icon-sm"]: "p-2",
-        icon: "p-1.5 min-w-[36px] min-h-[36px]",
+        ["icon"]: "p-1.5 min-w-[36px] min-h-[36px]",
         ["icon-lg"]: "text-base p-3"
     }
 }
@@ -30,8 +29,7 @@ const Button = ({ children, variant, size, disabled, className, ...props }) => {
                 buttonConfig?.variants?.[variant],
                 buttonConfig?.sizes?.[size],
                 className,
-                )}
-
+            )}
             {...props}
         >
             {children}

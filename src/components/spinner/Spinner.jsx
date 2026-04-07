@@ -1,14 +1,13 @@
-import {LuLoaderCircle} from "react-icons/lu";
-import {cn} from "../../utils/index.js";
-import {cloneElement} from "react";
+import { LuLoaderCircle } from "react-icons/lu";
+import { cn } from "../../utils/index.js";
 
 const spinnerConfig = {
-    default: "animate-spin size-5 text-base",
+    default: "animate-spin *:size-5 text-base flex items-center justify-center",
     sizes: {
-        xs: "size-3 text-xs",
-        sm: "size-4 text-sm",
-        lg: "size-8 text-lg",
-        xl: "size-12 text-xl"
+        xs: "*:size-3 text-xs",
+        sm: "*:size-4 text-sm",
+        lg: "*:size-8 text-lg",
+        xl: "*:size-12 text-xl"
     }
 }
 
@@ -18,17 +17,20 @@ const Spinner = ({ size, description, className, icon, ...props }) => {
     return (
         <div className="flex flex-col items-center gap-2">
             {icon ? (
-                cloneElement(icon, { className: spinnerClassName })
+                <span className={spinnerClassName}>
+                    {icon}
+                </span>
             ) : (
-                <LuLoaderCircle
-                    className={spinnerClassName}
-                    {...props}
-                />
+                <span className={spinnerClassName}>
+                    <LuLoaderCircle
+                        {...props}
+                    />
+                </span>
             )}
 
             {/* Spinner Description - example: Loading, Updating, etc... */}
             {description && (
-                <span className={cn(spinnerConfig.sizes?.[size], "font-medium size-fit")}>Loading</span>
+                <span className={cn(spinnerConfig.sizes?.[size], "font-medium size-fit")}>{description}</span>
             )}
         </div>
     );

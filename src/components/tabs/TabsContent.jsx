@@ -1,8 +1,4 @@
-import {useTabs} from "./Tabs.jsx";
-
 const TabsContent = ({ children, value, activeTab }) => {
-    // const { activeTab } = useTabs();
-
     if (activeTab !== value) return;
 
     return (

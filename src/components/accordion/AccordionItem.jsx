@@ -1,5 +1,4 @@
-import {FaChevronDown} from "react-icons/fa6";
-import {cn} from "../../utils/index.js";
+import { FaChevronDown } from "react-icons/fa6";
 
 const AccordionItem = ({ item, onTrigger }) => {
     return (
