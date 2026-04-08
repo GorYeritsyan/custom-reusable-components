@@ -29,6 +29,7 @@ const Notifications = () => {
         return acc;
     }, {});
 
+    // Sorting notifications to have consistent rendering
     const groupedNotificationsArray = Object.entries(groupedNotifications).toSorted();
 
     if (notifications.length === 0) return;

@@ -22,31 +22,38 @@ const dropdownConfig = {
 const Dropdown = ({ children, menu, position = "bottom-right", trigger = "click" }) => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const buttonTriggerHandler = trigger === "hover" ? (
+        { onMouseEnter: handleDropdownOpen, onMouseLeave: handleDropdownOpen }
+    ) : trigger === "click" && (
+        { onClick: handleDropdownOpen }
+    );
+
     function handleDropdownOpen() {
         setIsOpen(!isOpen);
     }
 
     return (
         <div
-            {...(trigger === "hover" && { onMouseEnter: handleDropdownOpen, onMouseLeave: handleDropdownOpen })}
             className="relative group"
         >
             <Button
-                {...(trigger === "click" && { onClick: handleDropdownOpen })}
+                className="relative"
+                {...buttonTriggerHandler}
             >
                 {children}
-            </Button>
 
-            {isOpen && (
-                <div className={cn("absolute border border-gray-300 min-w-75 bg-white rounded-md p-2 z-1", dropdownConfig?.positions?.[position])}>
-                    {menu.map((item, index) => (
-                        <DropdownItem key={index} disabled={item.disabled} danger={item.danger} icon={item?.icon}>
-                            {item?.icon}
-                            {item.label}
-                        </DropdownItem>
-                    ))}
-                </div>
-            )}
+                {/* Dropdown Menu */}
+                {isOpen && (
+                    <div className={cn("absolute border text-zinc-700 border-gray-300 min-w-75 bg-white rounded-md p-2 z-1", dropdownConfig?.positions?.[position])}>
+                        {menu.map((item, index) => (
+                            <DropdownItem key={index} disabled={item.disabled} danger={item.danger} icon={item?.icon}>
+                                {item?.icon}
+                                {item.label}
+                            </DropdownItem>
+                        ))}
+                    </div>
+                )}
+            </Button>
         </div>
     );
 }
