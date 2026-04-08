@@ -6,12 +6,12 @@ import Button from "../components/button/Button.jsx";
 import NotificationTimer from "./NotificationTimer.jsx";
 
 const Notification = ({ notification, duration = 3000 }) => {
-    const { removeNotification, notifications } = useNotification();
+    const { removeNotification } = useNotification();
 
     useEffect(() => {
         // Auto remove notification after 4 seconds
         setTimeout(() => removeNotification(notification.id), duration);
-    }, [notifications]);
+    }, []);
 
     return (
         <div className="flex relative items-start gap-3 bg-white border border-zinc-300 rounded-lg shadow-md shadow-zinc-300 px-4 py-3 min-w-75 w-fit">

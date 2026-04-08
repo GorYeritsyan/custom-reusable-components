@@ -1,6 +1,5 @@
 import ComponentCard from "../ComponentCard.jsx";
 import Button from "../button/Button.jsx";
-import {FaCheck} from "react-icons/fa";
 
 const ButtonComponentCard = () => {
     return (

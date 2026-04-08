@@ -1,6 +1,5 @@
 import Button from "../components/button/Button.jsx";
 
-
 const PaginationButton = ({ currentPage, page, onChangePage }) => {
     return (
         <Button

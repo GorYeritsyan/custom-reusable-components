@@ -1,6 +1,8 @@
 import Button from "../button/Button.jsx";
 
 const Table = ({ columns, data, actions }) => {
+    const colSpanLength = actions ? columns.length + 1 : columns.length;
+
     return (
         <table className="table-fixed rounded-lg w-full outline outline-gray-300 shadow-sm shadow-gray-300">
             <thead>
@@ -30,7 +32,7 @@ const Table = ({ columns, data, actions }) => {
                                     <Button
                                         key={action.name}
                                         className="capitalize"
-                                        variant={action.name === "delete" && "danger"}
+                                        variant={action?.variant}
                                         onClick={() => action.handler(item?.id)}
                                     >
                                         {action.name}
@@ -42,7 +44,7 @@ const Table = ({ columns, data, actions }) => {
                 ))
             ) : (
                 <tr>
-                    <th className="py-3 px-4 self-center font-medium text-gray-500" colSpan={4}>There is no users available</th>
+                    <th className="py-3 px-4 self-center font-medium text-gray-500" colSpan={colSpanLength}>There is no users available</th>
                 </tr>
             )}
             </tbody>

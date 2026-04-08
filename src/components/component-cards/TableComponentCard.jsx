@@ -45,6 +45,7 @@ const tableActions = [
     },
     {
         name: "delete",
+        variant: "danger",
         handler(id) {
             console.log("delete", id);
         }

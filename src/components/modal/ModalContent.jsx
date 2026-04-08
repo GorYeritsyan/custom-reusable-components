@@ -1,6 +1,6 @@
-import { useModal } from "./Modal.jsx";
 import { createPortal } from "react-dom";
 import { FaXmark } from "react-icons/fa6";
+import { useModal } from "./Modal.jsx";
 import ModalClose from "./ModalClose.jsx"
 
 const ModalContent = ({ children, title, description, showCloseButton = true }) => {

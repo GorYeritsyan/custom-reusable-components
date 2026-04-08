@@ -1,5 +1,3 @@
-import {FaRegBell} from "react-icons/fa";
-
 const EmptyMedia = ({ children, variant }) => {
 
     if (variant === "icon") return (

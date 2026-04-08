@@ -16,7 +16,7 @@ const notificationConfig = {
 }
 
 const Notifications = () => {
-    const { notifications, position = "top-left" } = useNotification();
+    const { notifications } = useNotification();
 
     // Group Notifications by position
     const groupedNotifications = notifications.reduce((acc, notification) => {
@@ -29,15 +29,19 @@ const Notifications = () => {
         return acc;
     }, {});
 
+    const groupedNotificationsArray = Object.entries(groupedNotifications).toSorted();
+
     if (notifications.length === 0) return;
 
     return (
         createPortal((
-            Object.entries(groupedNotifications).map(([position, notifications], index) => (
-                <div key={index} className={cn("fixed z-1 flex flex-col gap-2", notificationConfig?.positions?.[position])}>
-                    {notifications.map(notification => (
-                        <Notification key={notification.id} notification={notification} />
-                    ))}
+            groupedNotificationsArray.map(([position, groupedNotification]) => (
+                <div key={position} className={cn("fixed z-1 flex flex-col gap-2", notificationConfig?.positions?.[position])}>
+                    {groupedNotification.map(notification => {
+                        return (
+                            <Notification key={notification.id} notification={notification} />
+                        );
+                    })}
                 </div>
             ))
         ), document.body)

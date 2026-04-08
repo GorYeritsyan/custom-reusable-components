@@ -20,7 +20,7 @@ const dropdownMenu = [
 const DropdownComponentCard = () => {
     return (
         <ComponentCard title="Dropdown">
-            <Dropdown menu={dropdownMenu}>
+            <Dropdown menu={dropdownMenu} trigger="hover">
                 Open
             </Dropdown>
         </ComponentCard>

@@ -28,6 +28,9 @@ const TabsComponentCard = () => {
     return (
         <ComponentCard title="Tabs">
             <Tabs tabs={tabs} />
+
+            {/* Tabs with line variant */}
+            <Tabs tabs={tabs} variant="line" defaultTab="reporting" />
         </ComponentCard>
     );
 }

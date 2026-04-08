@@ -1,4 +1,4 @@
-import {cn} from "../../utils/index.js";
+import { cn } from "../../utils/index.js";
 
 const Form = ({ children, onSubmit, className }) => {
     return (

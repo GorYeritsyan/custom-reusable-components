@@ -1,5 +1,5 @@
+import { useModal } from "./Modal.jsx";
 import Button from "../button/Button.jsx";
-import {useModal} from "./Modal.jsx";
 
 const ModalClose = ({ children, variant, size }) => {
     const { closeModal } = useModal();

@@ -38,7 +38,7 @@ const Dropdown = ({ children, menu, position = "bottom-right", trigger = "click"
             </Button>
 
             {isOpen && (
-                <div className={cn("absolute border border-gray-300 min-w-75 bg-white rounded-md p-2", dropdownConfig?.positions?.[position])}>
+                <div className={cn("absolute border border-gray-300 min-w-75 bg-white rounded-md p-2 z-1", dropdownConfig?.positions?.[position])}>
                     {menu.map((item, index) => (
                         <DropdownItem key={index} disabled={item.disabled} danger={item.danger} icon={item?.icon}>
                             {item?.icon}
