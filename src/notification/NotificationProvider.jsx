@@ -1,5 +1,5 @@
-import {createContext, useContext, useState} from "react";
-import {FaCheck, FaCheckCircle} from "react-icons/fa";
+import { createContext, useContext, useState } from "react";
+import { FaCheckCircle } from "react-icons/fa";
 import { FaCircleXmark, FaTriangleExclamation } from "react-icons/fa6";
 
 const NotificationContext = createContext(null);

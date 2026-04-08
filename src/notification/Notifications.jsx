@@ -5,9 +5,9 @@ import { cn } from "../utils/index.js";
 
 const notificationConfig = {
     positions: {
-        ["top-left"]: "top-4 left-4",
-        ["top"]: "top-4 left-1/2 -translate-x-1/2",
-        ["top-right"]: "top-4 right-4",
+        ["top-left"]: "top-4 left-4 flex-col-reverse",
+        ["top"]: "top-4 left-1/2 -translate-x-1/2 flex-col-reverse",
+        ["top-right"]: "top-4 right-4 flex-col-reverse",
 
         ["bottom-left"]: "bottom-4 left-4",
         ["bottom"]: "bottom-4 left-1/2 -translate-x-1/2",
