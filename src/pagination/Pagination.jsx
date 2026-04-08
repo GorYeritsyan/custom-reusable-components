@@ -4,14 +4,26 @@ import Button from "../components/button/Button.jsx";
 import PaginationNextButton from "./PaginationNextButton.jsx";
 
 
-const Pagination = ({ currentPage= 1, onChangePage, totalPages = 10 }) => {
+const Pagination = ({ currentPage= 1, onChangePage, visibleButtonsNumber = 10, totalPages = 10, isEllipsis = true }) => {
     const offset = 1;
     const centerOffsetLength = offset * 2 + 1;
+    const halfOfVisibleButtons = visibleButtonsNumber / 2;
 
-    // Pagination start length is startOffset
-    const paginationCenter = Array.from({ length: centerOffsetLength })
-        .map((_, i) => currentPage - offset + i)
-        .filter(page => page > 0 && page <= totalPages);
+    const paginationArrayLength = isEllipsis ? centerOffsetLength : visibleButtonsNumber;
+    let paginationCenter = Array.from({ length: paginationArrayLength });
+
+    if (isEllipsis) {
+        // Pagination start length is startOffset
+        paginationCenter = paginationCenter
+            .map((_, i) => currentPage - offset + i)
+            .filter(page => page > 0 && page <= totalPages);
+    } else {
+        paginationCenter = paginationCenter
+            .map((_, i) => currentPage > halfOfVisibleButtons && currentPage <= totalPages - halfOfVisibleButtons ? (
+                currentPage - halfOfVisibleButtons + i
+            ) : currentPage >= totalPages - halfOfVisibleButtons ? totalPages - visibleButtonsNumber + i + 1 :  i + 1)
+            .filter(page => page > 0 && page <= totalPages);
+    }
 
     function incrementPage() {
         onChangePage(currentPage + 1);
@@ -30,23 +42,23 @@ const Pagination = ({ currentPage= 1, onChangePage, totalPages = 10 }) => {
                     )}
 
                     {/* Pagination start buttons */}
-                    {currentPage > offset * 2 && (
+                    {isEllipsis && currentPage > offset * 2 && (
                         <PaginationButton currentPage={currentPage} onChangePage={onChangePage} page={1} />
                     )}
 
-                    {currentPage > centerOffsetLength && <Button readOnly variant="ghost">...</Button>}
+                    {isEllipsis && currentPage > centerOffsetLength && <Button readOnly variant="ghost">...</Button>}
 
                     {/* Pagination center buttons */}
                     {paginationCenter.map((page, index) => (
                         <PaginationButton currentPage={currentPage} onChangePage={onChangePage} key={index} page={page} />
                     ))}
 
-                    {currentPage < (totalPages - 2 * offset) && (
+                    {isEllipsis && currentPage < (totalPages - 2 * offset) && (
                         <Button readOnly variant="ghost">...</Button>
                     )}
 
                     {/* Pagination end buttons */}
-                    {currentPage < totalPages - offset && (
+                    {isEllipsis && currentPage < totalPages - offset && (
                         <PaginationButton currentPage={currentPage} onChangePage={onChangePage} page={totalPages} />
                     )}
 
