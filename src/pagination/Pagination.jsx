@@ -3,9 +3,8 @@ import PaginationButton from "./PaginationButton.jsx";
 import Button from "../components/button/Button.jsx";
 import PaginationNextButton from "./PaginationNextButton.jsx";
 
-const Pagination = ({ currentPage= 1, onChangePage, visibleButtonsNumber = 10, totalPages = 10, isEllipsis = false }) => {
+const Pagination = ({ currentPage= 1, onChangePage, visibleButtonsNumber = 10, totalPages = 10, isEllipsis = true }) => {
     const offset = 1;
-    totalPages = 20;
     const centerOffsetLength = offset * 2 + 1;
     const halfOfVisibleButtons = visibleButtonsNumber / 2;
 

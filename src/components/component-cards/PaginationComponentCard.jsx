@@ -12,6 +12,7 @@ const PaginationComponentCard = () => {
     return (
         <ComponentCard title="Pagination">
             <Pagination currentPage={page} onChangePage={handlePageChange} totalPages={10} />
+            <Pagination currentPage={page} onChangePage={handlePageChange} totalPages={10} isEllipsis={false} />
         </ComponentCard>
     );
 }
